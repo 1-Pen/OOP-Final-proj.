@@ -12,11 +12,11 @@ import java.awt.event.ActionListener;
 public class TableSelection extends JPanel {
 
     private JButton[] tableButtons = new JButton[10];
-    private Page main; // เก็บอ้างอิงของคลาสหลัก
+    private Page main;
 
     public TableSelection(CardLayout layout, JPanel container, Page main) {
         this.main = main;
-        setLayout(null); // ใช้ Absolute Layout
+        setLayout(null);
 
         JLabel lblTitle = new JLabel("Select your table");
         lblTitle.setFont(new Font("Tahoma", Font.BOLD, 24));
@@ -51,7 +51,7 @@ public class TableSelection extends JPanel {
         btnBack.setBounds(10, 10, 80, 30);
         btnBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                layout.show(container, "Login");
+                layout.show(container, "login");
             }
         });
         add(btnBack);
