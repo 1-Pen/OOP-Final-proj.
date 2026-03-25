@@ -75,7 +75,7 @@ public class Login extends JPanel {
 		    	 String pass = new String(passwordField.getPassword());
 			        if (main.checkLogin(txtUsername.getText(), pass)) {
 			        	JOptionPane.showMessageDialog(null, "Done");
-			            layout.show(container, "register");
+			            layout.show(container, "tableSelection");
 			        }
 			        else 
 			            JOptionPane.showMessageDialog(null, "Invalid Name or Password!");
