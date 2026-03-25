@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 public class TableSelection extends JPanel {
 
-    private JButton[] tableButtons = new JButton[10];
+	private JButton[] tableButtons = new JButton[10];
     private Page main;
 
     public TableSelection(CardLayout layout, JPanel container, Page main) {
@@ -51,7 +51,7 @@ public class TableSelection extends JPanel {
         btnBack.setBounds(10, 10, 80, 30);
         btnBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                layout.show(container, "login");
+                layout.show(container, "Login");
             }
         });
         add(btnBack);
@@ -62,11 +62,11 @@ public class TableSelection extends JPanel {
             if (main.isTableBooked[i]) {
                 tableButtons[i].setBackground(Color.RED);
                 tableButtons[i].setForeground(Color.WHITE);
-                tableButtons[i].setEnabled(false); // จองแล้วกดไม่ได้
+                tableButtons[i].setEnabled(false);
             } else {
                 tableButtons[i].setBackground(Color.GREEN);
                 tableButtons[i].setForeground(Color.BLACK);
-                tableButtons[i].setEnabled(true); // ว่างกดได้
+                tableButtons[i].setEnabled(true);
             }
         }
     }
