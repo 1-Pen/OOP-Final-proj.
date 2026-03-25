@@ -14,23 +14,29 @@ import javax.swing.JFileChooser;
 import java.io.File;
 
 public class Payment extends JPanel {
-    
-    private Page main;
+	private static JLabel lblPrice;
+	public static void updateData() {
+		
+		lblPrice.setText(String.format("Total: %d Baht", Page.price));
+    }
 
     public Payment(CardLayout layout, JPanel container, Page main) {
-        this.main = main;
         setLayout(null);
+
+        lblPrice = new JLabel("", SwingConstants.CENTER);
+        lblPrice.setFont(new Font("Tahoma", Font.BOLD, 20));
+        lblPrice.setForeground(Color.RED); 
+        lblPrice.setBounds(100, 55, 218, 40);
+        add(lblPrice);
+        
+        
         
         JLabel lblTitle = new JLabel("Payment", SwingConstants.CENTER);
         lblTitle.setFont(new Font("Tahoma", Font.BOLD, 24));
         lblTitle.setBounds(100, 27, 218, 40);
         add(lblTitle);
 
-        JLabel lblPrice = new JLabel("Total:  Baht", SwingConstants.CENTER);
-        lblPrice.setFont(new Font("Tahoma", Font.BOLD, 20));
-        lblPrice.setForeground(Color.RED); 
-        lblPrice.setBounds(100, 55, 218, 40);
-        add(lblPrice);
+        
 
         JLabel lblQRCode = new JLabel("<html><center>จำลองภาพ<br>QR Code</center></html>", SwingConstants.CENTER);
         lblQRCode.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -54,9 +60,7 @@ public class Payment extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 
                 main.isTableBooked[main.currentSelectedTable] = true;
-                
                 main.tablePage.refreshTableColors();
-                
                 layout.show(container, "TableSelection"); 
             }
         });
@@ -70,11 +74,12 @@ public class Payment extends JPanel {
                 int result = fileChooser.showOpenDialog(null);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File selectedFile = fileChooser.getSelectedFile();
-                    System.out.println("ไฟล์ที่เลือก: " + selectedFile.getAbsolutePath());
+                    System.out.println("Selected File: " + selectedFile.getAbsolutePath());
 
                 }
             }
         });
         add(btnUpload);
     }
+    
 }
