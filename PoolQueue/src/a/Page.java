@@ -16,7 +16,6 @@ public class Page extends JFrame {
 	public boolean[] isTableBooked = {false, false, false, false, false, false, false, false, false, false};
 	public int currentSelectedTable = -1;
 	public Payment payment;
-	public Data data;
 	public int price;
 	
 	public static class User {
