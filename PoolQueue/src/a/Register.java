@@ -96,7 +96,7 @@ public class Register extends JPanel {
 				String password = new String(passwordField.getPassword());
 				String confirmPassword = new String(confirmPasswordField.getPassword());
 				
-				if(txtUsername.getText().equals("Enter Name...")) 
+				if(txtUsername.getText().equals("Enter Name...") || password.trim().isEmpty() || confirmPassword.isEmpty()) 
                     JOptionPane.showMessageDialog(Register.this, "Please fill everything in form", "Alert", JOptionPane.WARNING_MESSAGE);
 				else {
 					if(confirmPassword.equals(password)) {
