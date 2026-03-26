@@ -13,9 +13,9 @@ public class Page extends JFrame {
 	private JPanel contentPane;
 	private CardLayout cardLayout = new CardLayout();
 	public TableSelection tablePage;
+	public Payment payment;
 	public boolean[] isTableBooked = {false, false, false, false, false, false, false, false, false, false};
 	public int currentSelectedTable = -1;
-	public Payment payment;
 	public int price;
 	
 	public static class User {
